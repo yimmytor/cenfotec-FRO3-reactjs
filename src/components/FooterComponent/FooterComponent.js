@@ -1,4 +1,6 @@
-const FooterSite = () => {
+import './FooterComponent.css';
+
+function FooterComponent() {
     return (
         <footer>
             <p>Aquí va el footer...</p>
@@ -6,4 +8,4 @@ const FooterSite = () => {
     );
 }
  
-export default FooterSite;
+export default FooterComponent;

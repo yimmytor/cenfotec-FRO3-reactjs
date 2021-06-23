@@ -1,4 +1,6 @@
-const MainSite = () => {
+import './MainComponent.css';
+
+function MainComponent() {
     return ( 
         <main>
             <h1>Aquí va el contenido principal...</h1>
@@ -6,4 +8,4 @@ const MainSite = () => {
     );
 }
  
-export default MainSite;
+export default MainComponent;

@@ -1,14 +1,14 @@
 import {Fragment} from 'react';
-import HeaderSite from './components/HeaderSite';
-import MainSite from './components/MainSite';
-import FooterSite from './components/FooterSite';
+import HeaderComponent from './components/HeaderComponent/HeaderComponent';
+import MainComponent from './components/MainComponent/MainComponent';
+import FooterComponent from './components/FooterComponent/FooterComponent';
 
 function App() {
   return (
     <Fragment>
-      <HeaderSite />
-      <MainSite />
-      <FooterSite />
+      <HeaderComponent />
+      <MainComponent />
+      <FooterComponent />
     </Fragment>
   );
 }
