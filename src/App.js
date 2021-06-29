@@ -23,8 +23,8 @@ class App extends React.Component {
           message="Utilizamos cookies para mejorar su experiencia en nuestro sitio. Para continuar navegando seleccione la configuración de Cookies que desea utilizar."
           buttons={
             [
-              {method: this.todas.bind(this), label: 'Aceptar Todas', classButton: 'modalButton'},
-              {method: this.necesarias.bind(this), label: 'Sólo las necesarias', classButton: 'modalButton'}                            
+              {method: this.establecerCookies.bind(this, 'todas'), label: 'Aceptar Todas', classButton: 'modalButton'},
+              {method: this.establecerCookies.bind(this, 'necesarias'), label: 'Sólo las necesarias', classButton: 'modalButton'}                            
             ]
           }
         />  
@@ -37,7 +37,7 @@ class App extends React.Component {
   establecerCookies(valor) {
     let cookies = new Cookies();
 
-    cookies.set('cookies_aceptadas',valor);
+    cookies.set('cookies_aceptadas',valor);  
 
     this.setState(
       {cookies: valor}
@@ -48,14 +48,6 @@ class App extends React.Component {
     let cookies = new Cookies();
 
     return cookies.get('cookies_aceptadas')
-  }
-
-  todas(e) {
-    this.establecerCookies('todas');        
-  }
-
-  necesarias(e){
-    this.establecerCookies('necesarias');    
   }
 
   render() {    
