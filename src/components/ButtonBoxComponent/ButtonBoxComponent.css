@@ -1,0 +1,27 @@
+.modalButtonBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalButton {
+    width: 130px;
+    height: 40px;
+    margin: 0 5px;
+    border: none;
+    background-color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+    cursor: pointer;
+}
+
+.modalButton:first-child {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.modalButton:last-child {
+    margin-right: 0;
+    margin-left: 5px;
+}

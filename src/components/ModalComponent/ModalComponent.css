@@ -1,0 +1,37 @@
+.modalBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+}
+
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 40%;
+    padding: 0 30px;
+    background-color: rgb(18, 27, 66);
+    color: white;
+}
+
+.modalTitle {
+    height: 20%;    
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.modalMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55%;
+}

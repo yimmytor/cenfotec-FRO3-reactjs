@@ -1,9 +1,12 @@
+import React from 'react';
 import './NavLinkComponent.css';
 
-function NavLinkComponent(props) {
-    return(
-        <li><a href={props.url}>{props.nombre}</a></li>
-    );
+class NavLinkComponent extends React.Component {
+    render() {
+        return(
+            <li><a href={this.props.url}>{this.props.etiqueta}</a></li>
+        );
+    }
 }
 
 export default NavLinkComponent;

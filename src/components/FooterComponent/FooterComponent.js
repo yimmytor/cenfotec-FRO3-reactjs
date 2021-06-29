@@ -1,11 +1,14 @@
+import React from 'react';
 import './FooterComponent.css';
 
-function FooterComponent() {
-    return (
-        <footer>
-            <p>Aquí va el footer...</p>
-        </footer>
-    );
+class FooterComponent extends React.Component {
+    render(){
+        return( 
+            <footer>
+                <p>Aquí va el footer...</p>
+            </footer>
+        );
+    }
 }
- 
+
 export default FooterComponent;
