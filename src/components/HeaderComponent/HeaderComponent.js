@@ -11,10 +11,10 @@ class HeaderComponent extends React.Component {
                 <span>Oursourcing Administrativo - Contable</span>
                 <NavComponent menuLinks={
                     [
-                        {url: '#', etiqueta: 'Inicio'},
-                        {url: '#', etiqueta: 'Nosotros'},
-                        {url: '#', etiqueta: 'Servicios'},
-                        {url: '#', etiqueta: 'Contacto'}                        
+                        {url: '/inicio', etiqueta: 'Inicio'},
+                        {url: '/nosotros', etiqueta: 'Nosotros'},
+                        {url: '/servicios', etiqueta: 'Servicios'},
+                        {url: '/contacto', etiqueta: 'Contacto'}                        
                     ]
                 }/>
             </header>

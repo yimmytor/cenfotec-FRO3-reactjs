@@ -2,9 +2,17 @@ import React from 'react';
 import Cookies from 'universal-cookie';
 import {Fragment} from 'react';
 import HeaderComponent from './HeaderComponent/HeaderComponent';
-import MainComponent from './MainComponent/MainComponent';
+import RouterComponent from './RouterComponent/RouterComponent';
 import FooterComponent from './FooterComponent/FooterComponent';
 import ModalComponent from './ModalComponent/ModalComponent';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch
+} from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -54,8 +62,10 @@ class App extends React.Component {
     return (
       <Fragment>
         {this.mostrarModalCookies()}              
-        <HeaderComponent />
-        <MainComponent />
+        <Router>
+          <HeaderComponent />
+          <RouterComponent />          
+        </Router>
         <FooterComponent />
       </Fragment>
     );
