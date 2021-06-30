@@ -10,6 +10,7 @@ import NotFoundComponent from '../NotFoundComponent/NotFoundComponent';
 class RouterComponent extends React.Component {
     render() {
         return (
+          <main>
             <Switch>
               <Route exact path="/">
                 <Redirect to="/inicio" />
@@ -30,6 +31,7 @@ class RouterComponent extends React.Component {
                 <NotFoundComponent />
               </Route>          
             </Switch>
+          </main>          
         );
     }
 }

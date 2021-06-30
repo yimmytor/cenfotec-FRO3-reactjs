@@ -5,14 +5,7 @@ import HeaderComponent from './HeaderComponent/HeaderComponent';
 import RouterComponent from './RouterComponent/RouterComponent';
 import FooterComponent from './FooterComponent/FooterComponent';
 import ModalComponent from './ModalComponent/ModalComponent';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-  useRouteMatch
-} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
