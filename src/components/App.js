@@ -7,17 +7,21 @@ import FooterComponent from './FooterComponent/FooterComponent';
 import ModalComponent from './ModalComponent/ModalComponent';
 import {BrowserRouter as Router} from "react-router-dom";
 
+
+// Testimonial API
+// https://testimonialapi.toolcarton.com/api/
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     
     this.state = {
-      cookies: this.cookiesAceptadas()
-    }
+      cookies: this.cookiesAceptadas()            
+    }    
   }
 
   mostrarModalCookies() {
-    if(this.state.cookies === undefined){
+    if(this.state.cookies === undefined) {
       return (
         <ModalComponent 
           title="AVISO DE COOKIES"

@@ -7,7 +7,7 @@ import Servicios from '../ServiciosComponent/ServiciosComponent';
 import Contacto from '../ContactoComponent/ContactoComponent';
 import NotFoundComponent from '../NotFoundComponent/NotFoundComponent';
 
-class RouterComponent extends React.Component {
+class RouterComponent extends React.Component {    
     render() {
         return (
           <main>
@@ -29,7 +29,7 @@ class RouterComponent extends React.Component {
               </Route>
               <Route path="*">
                 <NotFoundComponent />
-              </Route>          
+              </Route>                        
             </Switch>
           </main>          
         );
