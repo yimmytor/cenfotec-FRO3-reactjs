@@ -8,7 +8,7 @@ class HeaderComponent extends React.Component {
         return(
             <header>
                 <img src={logo} alt="Logo de ignova"/>
-                <span>Oursourcing Administrativo - Contable</span>
+                <span>Outsourcing Administrativo - Contable</span>
                 <NavComponent />
             </header>
         );

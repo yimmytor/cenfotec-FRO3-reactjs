@@ -6,37 +6,51 @@ class NavComponent extends React.Component {
     constructor(props) {
         super(props);
 
+        this.menuLinks = [
+            {url: '/inicio', etiqueta: 'Inicio',activo: false},
+            {url: '/nosotros', etiqueta: 'Nosotros',activo: false},
+            {url: '/servicios', etiqueta: 'Servicios',activo: false},
+            {url: '/contacto', etiqueta: 'Contacto',activo: false}                        
+        ];
+
         this.state = {            
-            menuLinks: [
-                {url: '/inicio', etiqueta: 'Inicio',activo: true},
-                {url: '/nosotros', etiqueta: 'Nosotros',activo: false},
-                {url: '/servicios', etiqueta: 'Servicios',activo: false},
-                {url: '/contacto', etiqueta: 'Contacto',activo: false}                        
-            ],
-            menu: null
+            menu: ''
         }  
     }
 
-    setActivo(e){
-        console.log(this);
-        this.establecerMenuActivo(e.target.href.toString().split('/')[e.target.href.toString().split('/').length-1]);    
+    componentDidMount() {        
+        this.establecerMenuActivo(window);
     }
 
-    establecerMenuActivo(menu){        
-        let menuParamentro = '/' + menu;
-        let menuActivo = false
-        
-        console.log(menuParamentro);
+    obtenerRutaActual(ruta) {
+        let rutaFinal = ruta.toString().split('/');
 
-        this.setState({menu: this.state.menuLinks.map(link => {
-                if(!menuActivo && link.url === menuParamentro){
+        return '/' + rutaFinal[rutaFinal.length - 1];
+    }
+
+    establecerMenuActivo(e) {        
+        let menu;
+
+        if(e.hasOwnProperty('location')) {        
+            menu = this.obtenerRutaActual(window.location.href);
+        }else{            
+            menu = this.obtenerRutaActual(e.target.href);
+        }
+
+        let menuActivo = false;
+        
+        this.menuLinks = [...this.menuLinks.map(link => {
+                link.activo = false;
+
+                if(!menuActivo && link.url === menu) {
                     menuActivo = true;
-                    return link.activo = true;
-                }else{
-                    return link.activo = false;
+                    
+                    link.activo = true;
                 }   
-            }   
-        )});
+
+                return link;
+            }               
+        )];
 
         this.generarMenu();
     }
@@ -45,15 +59,12 @@ class NavComponent extends React.Component {
         let linkID = 1;      
         
         this.setState({menu: 
-            this.state.menuLinks.map(link =>
-                <NavLinkComponent key={(linkID++).toString()} activo={link.activo} url={link.url} etiqueta={link.etiqueta} setActivo={this.setActivo.bind(this)}/>
+            this.menuLinks.map(link => {
+                    return <NavLinkComponent key={(linkID++).toString()} clase={link.activo?'link-activo':''} url={link.url} etiqueta={link.etiqueta} setActivo={this.establecerMenuActivo.bind(this)}/>
+                }
             )
         });
     }   
-
-    componentDidMount(){
-        this.generarMenu();
-    }
 
     render() {
         return(
