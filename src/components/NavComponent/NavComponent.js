@@ -24,12 +24,12 @@ class NavComponent extends React.Component {
     }
 
     establecerMenuActivo(e) {        
-        let menu;
+        let rutaActual;
 
         if(e.hasOwnProperty('location')) {        
-            menu = this.obtenerRutaActual(window.location.href);            
+            rutaActual = this.obtenerRutaActual(window.location.href);            
         }else{            
-            menu = this.obtenerRutaActual(e.target.href);
+            rutaActual = this.obtenerRutaActual(e.target.href);
         }
 
         let menuActivo = false;        
@@ -37,7 +37,7 @@ class NavComponent extends React.Component {
         this.menuLinks = [...this.menuLinks.map(link => {
                 link.activo = false;
 
-                if(!menuActivo && (link.url === menu || (link.homePage && menu === '/'))) {
+                if(!menuActivo && (link.url === rutaActual || (link.homePage && rutaActual === '/'))) {
                     menuActivo = true;
                     
                     link.activo = true;
