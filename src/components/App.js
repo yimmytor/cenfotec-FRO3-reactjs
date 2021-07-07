@@ -6,7 +6,10 @@ import RouterComponent from './RouterComponent/RouterComponent';
 import FooterComponent from './FooterComponent/FooterComponent';
 import ModalComponent from './ModalComponent/ModalComponent';
 import {BrowserRouter as Router} from "react-router-dom";
-
+import InicioComponent from './InicioComponent/InicioComponent';
+import NosotrosComponent from './NosotrosComponent/NosotrosComponent';
+import ServiciosComponent from './ServiciosComponent/ServiciosComponent';
+import ContactoComponent from './ContactoComponent/ContactoComponent';
 
 // Testimonial API
 // https://testimonialapi.toolcarton.com/api/
@@ -18,6 +21,13 @@ class App extends React.Component {
     this.state = {
       cookies: this.cookiesAceptadas()            
     }    
+
+    this.menuLinks = [
+      {url: '/inicio', texto: 'Inicio',activo: true, homePage: true, componente: <InicioComponent />},
+      {url: '/nosotros', texto: 'Nosotros',activo: false, homePage: false, componente: <NosotrosComponent />},
+      {url: '/servicios', texto: 'Servicios',activo: false, homePage: false, componente: <ServiciosComponent />},
+      {url: '/contacto', texto: 'Contacto',activo: false, homePage: false, componente: <ContactoComponent />}      
+    ];
   }
 
   mostrarModalCookies() {
@@ -60,8 +70,8 @@ class App extends React.Component {
       <Fragment>
         {this.mostrarModalCookies()}              
         <Router>
-          <HeaderComponent />
-          <RouterComponent />          
+          <HeaderComponent menuLinks={this.menuLinks} />
+          <RouterComponent menuLinks={this.menuLinks} />          
         </Router>
         <FooterComponent />
       </Fragment>

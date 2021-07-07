@@ -5,17 +5,12 @@ import NavLinkComponent from "../NavLinkComponent/NavLinkComponent";
 class NavComponent extends React.Component {
     constructor(props) {
         super(props);
-
-        this.menuLinks = [
-            {url: '/inicio', etiqueta: 'Inicio',activo: false},
-            {url: '/nosotros', etiqueta: 'Nosotros',activo: false},
-            {url: '/servicios', etiqueta: 'Servicios',activo: false},
-            {url: '/contacto', etiqueta: 'Contacto',activo: false}                        
-        ];
+        
+        this.menuLinks = [...this.props.menuLinks];
 
         this.state = {            
             menu: ''
-        }  
+        }
     }
 
     componentDidMount() {        
@@ -32,17 +27,17 @@ class NavComponent extends React.Component {
         let menu;
 
         if(e.hasOwnProperty('location')) {        
-            menu = this.obtenerRutaActual(window.location.href);
+            menu = this.obtenerRutaActual(window.location.href);            
         }else{            
             menu = this.obtenerRutaActual(e.target.href);
         }
 
-        let menuActivo = false;
+        let menuActivo = false;        
         
         this.menuLinks = [...this.menuLinks.map(link => {
                 link.activo = false;
 
-                if(!menuActivo && link.url === menu) {
+                if(!menuActivo && (link.url === menu || (link.homePage && menu === '/'))) {
                     menuActivo = true;
                     
                     link.activo = true;
@@ -60,7 +55,7 @@ class NavComponent extends React.Component {
         
         this.setState({menu: 
             this.menuLinks.map(link => {
-                    return <NavLinkComponent key={(linkID++).toString()} clase={link.activo?'link-activo':''} url={link.url} etiqueta={link.etiqueta} setActivo={this.establecerMenuActivo.bind(this)}/>
+                    return <NavLinkComponent key={(linkID++).toString()} clase={link.activo?'link-activo':''} url={link.url} texto={link.texto} setActivo={this.establecerMenuActivo.bind(this)}/>
                 }
             )
         });

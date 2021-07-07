@@ -9,5 +9,6 @@ li a {
 }
 
 .link-activo {
-    font-weight: bold;
+    font-weight: 700;
+    color: rgb(253, 255, 133);
 }

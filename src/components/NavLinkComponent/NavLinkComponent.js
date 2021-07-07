@@ -4,8 +4,8 @@ import './NavLinkComponent.css';
 
 class NavLinkComponent extends React.Component {
     render() {
-        return(
-            <li><Link onClick={this.props.setActivo} className={this.props.clase} to={this.props.url}>{this.props.etiqueta}</Link></li>            
+        return(            
+            <li><Link onClick={this.props.setActivo} className={this.props.clase} to={this.props.url}>{this.props.texto}</Link></li>            
         );
     }
 }

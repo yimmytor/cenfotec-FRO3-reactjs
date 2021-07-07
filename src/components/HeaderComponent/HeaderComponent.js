@@ -9,7 +9,7 @@ class HeaderComponent extends React.Component {
             <header>
                 <img src={logo} alt="Logo de ignova"/>
                 <span>Outsourcing Administrativo - Contable</span>
-                <NavComponent />
+                <NavComponent menuLinks={this.props.menuLinks} />
             </header>
         );
     }
