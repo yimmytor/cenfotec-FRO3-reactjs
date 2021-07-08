@@ -11,7 +11,7 @@ import ServiciosComponent from './ServiciosComponent/ServiciosComponent';
 import ContactoComponent from './ContactoComponent/ContactoComponent';
 
 // Testimonial API
-// https://testimonialapi.toolcarton.com/api/
+// 
 
 class App extends React.Component {
   constructor(props) {
