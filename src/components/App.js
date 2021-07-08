@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Cookies from 'universal-cookie';
-import {Fragment} from 'react';
 import HeaderComponent from './HeaderComponent/HeaderComponent';
 import RouterComponent from './RouterComponent/RouterComponent';
 import FooterComponent from './FooterComponent/FooterComponent';

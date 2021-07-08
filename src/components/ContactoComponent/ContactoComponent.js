@@ -1,10 +1,14 @@
 import React from 'react';
 import './ContactoComponent.css';
+import FormularioContactoComponent from '../FormularioContactoComponent/FormularioContactoComponent'
 
 class ContactoComponent extends React.Component {
     render() {
         return(
-            <h1>Contacto</h1>
+            <div className="contacto-box">
+                <h1>¡Contacta con nuestro equipo!</h1>
+                <FormularioContactoComponent />
+            </div>
         );
     }
 }
