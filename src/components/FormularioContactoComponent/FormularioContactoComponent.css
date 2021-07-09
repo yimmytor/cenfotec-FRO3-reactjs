@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     padding: 25px;
-    /* background-color: red; */    
 }
 
 .formulario-contacto .form-field {
@@ -66,7 +65,7 @@
 
 .formulario-contacto button {
     width: 8rem;
-    padding: 20px;
+    padding: 15px;
     margin: auto;    
     border: none;
     cursor: pointer;

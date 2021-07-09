@@ -4,11 +4,13 @@ import './TestimonialCardComponent.css';
 class TestimonialCardComponent extends React.Component {
     render(){
         return(
-            <div>                
-                <img src={this.props.avatar}/>
-                <p>Nombre: {this.props.nombre}</p>
-                <p>Puesto: {this.props.puesto}</p>
-                <p>{this.props.mensaje}</p>
+            <div className="testimonial-card">      
+                <img src={this.props.avatar} alt="Avatar del cliente que da el testimonio"/>
+                <p className="testimonial-nombre">{this.props.nombre}</p>
+                <p className="testimonial-puesto">{this.props.puesto}</p>
+                <p className="testimonial-mensaje">
+                    <q>{this.props.mensaje}</q>
+                </p>
             </div>
         );
     }

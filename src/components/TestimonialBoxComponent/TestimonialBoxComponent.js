@@ -54,11 +54,13 @@ class TestimonialBoxComponent extends React.Component {
 
     render(){
         return(
-            <div>
-                <h2>Testimonios</h2>
-                {this.state.testimonios}                                
-            </div>
-            
+            <div className="testimonial-container">
+                <h2>Testimonios de Nuestros Clientes</h2>
+
+                <div className="testimonial-box">
+                    {this.state.testimonios}                                
+                </div>
+            </div>            
         );
     }
 }
